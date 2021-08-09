@@ -74,3 +74,12 @@ class BookingInfo(models.Model):
             obj = self.hotel_room_type
             
         return f'{obj} {self.price}'
+
+
+class Reserved(models.Model):
+    booking_info = models.ForeignKey(BookingInfo, on_delete=models.CASCADE)
+    check_in = models.DateField()
+    check_out = models.DateField()
+
+    def __str__(self):
+        return f'from {self.check_in} to {self.check_out}'
