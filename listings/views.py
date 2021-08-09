@@ -26,7 +26,7 @@ class BookingInfoViewSet(generics.ListAPIView):
             print(len(reserved_listing))
 
             queryset = queryset.exclude(id__in=[item.booking_info.id for item in reserved_listing])
-        return queryset
+        return queryset.order_by('price')
 
 
 class ReservedInfoViewSet(generics.ListCreateAPIView):
