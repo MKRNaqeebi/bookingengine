@@ -33,6 +33,7 @@ Extend Django Project with Django REST Framework for a simple prebuild booking a
 
 ## Initial Project setup
     git clone https://bitbucket.org/staykeepersdev/bookingengine.git
+    cd bookingengine
     python -m venv venv
     pip install -r requirements.txt
     python manage.py runserver
